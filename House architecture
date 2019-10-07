@@ -1,0 +1,81 @@
+# Python / Designing a new house
+# created on Oct. 7th 2019
+
+
+# tell the user what the program is 
+print(" A new house is being built, you play the role of architect and designer")
+print(" This house is in the planning phase, you will be asked for details on how the house will be built")
+print(" Press enter after typing your answer")
+
+story = input("> Is the house one or two stories?..")
+
+front_yard = input("> What kind of front yard will this house have (grass, rock, etc?...")
+back_yard = input("> What kind of back yard will this house have (grass, rock, etc?...")
+
+print(" Exterior wall siding can be built from: stone, stucco, concrete, vinyl, brick and other materials")
+siding = input("> What will the exterior wall siding be built from?...")
+
+#walk way to the front door
+walk_way = input("> What building material will be used to build the walk way to the front door (brick, concrete, etc?...")
+walk_style = input("> Will the walk way be straight or curved?...")
+
+garage = input("> Will this house have a garage or a car port?...")
+
+print(" Possible architecture styles are: American Colonial, Victorian, Tudor, Ranch, mid-century, etc")
+style = input("> What architecture style will be used to build this house?...")
+
+print("<<<< >>>>")
+print("<<<< >>>>")
+print("<<<< >>>>")
+
+print(" The interior of the house")
+
+print(" floor types are: wood, carpet, vinyl, tile, etc")
+kitchen_floor = input("> What kind of kitchen floor will this house have?...")
+living_floor = input("> What kind of living room floor will this house have?...")
+
+#for the guest bedroom
+room1_color = input("> What color do you want the guest bedroom walls to be painted?...")
+room1_window = input("> Will the guest bedroom have blinds or curtains?...")
+room1_floor = input("> What kind of flooring will the guest bedroom have?...")
+
+# for the master bedroom
+room2_color = input("> What color do you want the master bedroom walls to be painted?...")
+room2_window = input("> Will the guest bedroom have blinds or curtains?...")
+room2_floor = input("> What kind of flooring will the master bedroom have?...")
+
+print("<<<< >>>>")
+print("<<<< >>>>")
+print("<<<< >>>>")
+
+# The kitchen design
+print(" We will talk to a designer to discuss options for the kitchen design")
+print(" I have a catalog of kitchen designs for you to look at before you make a decide")
+print("- - - - - - ")
+print(" Please take a moment to look over the house architecture you choose")
+# print statement with the user input
+print("- - - - - - ")
+print("((((( This new house )))))")
+# statements and variable for the exterior of the house
+print("<<<<< exterior >>>>>")
+print("....................... " + story + " stories / floors")
+print("Front yard............. " + front_yard)
+print("Back yard.............. " + front_yard)
+print("Exterior wall siding... " + siding)
+print("front door walk way.... " + walk_way + " & " + walk_style)
+print("car storage............ " + garage)
+print("Architecture style..... " + style)
+print("..........")
+
+# statements for the interior of the house
+print("***** interior *****")
+print("Master bedroom wall color.........." + room2_color)
+print("Master bedroom.........." + room2_window)
+print("Master bedroom flooring.........." + room2_floor)
+
+print("Kitchen  floor.........." + kitchen_floor)
+print("Living room floor.........." + living_floor)
+
+print("Guest bedroom wall color.........." + room1_color)
+print("Guest bedroom.........." + room1_window)
+print("Guest bedroom flooring.........." + room1_floor)
