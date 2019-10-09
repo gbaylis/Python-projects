@@ -1,0 +1,108 @@
+# State Capital Quiz, created on Oct. 9th, 2019, Python
+class Question:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
+      
+print("> This is a quiz, about state capitals, you will earn one point for each question answered correctly") 
+print("> 10 of the western states")
+print("> 10 of the central states")
+print("> 10 of the eastern states")
+print("> Please type the answer in lower case and then press enter")
+print("<<<<< >>>>>")
+      
+		      #Ask the user the capital of western states  
+question_prompts = [
+		    #quiz on ten of the western states
+    "Q1) What is the capital of Alaska?\n(a)> Anchorage\n(b)> Juneau\n(c)> Fairbanks...", # Alaska / Juneau
+    "Q2) What is the capital of Arizona?\n(a)> Phoenix\n(b)> Tucson\n(c)> Scottsdale...", # Arizona / Phoenix
+    "Q3) What is the capital of California?\n(a)> Sacramento\n(b)> Los Angeles\n(c)> San Francisco...", # California / Sacramento
+    "Q4) What is the capital of Hawaii?\n(a)> Wailuku\n(b)> Halawa\n(c)> Honolulu...", # Hawaii / Honolulu
+    "Q5) What is the capital of Idaho?\n(a)> Idaho Falls\n(b)> Nampa\n(c)> Boise...", # Idaho / Boise
+    
+    "Q6) What is the capital of Montana?\n(a)> Billings \n(b)> Helena\n(c)> Great Falls ...", # Montana / Helena
+    "Q7) What is the capital of New Mexico?\n(a)> Albuquerque \n(b)> Roswell \n(c)> Santa Fe ...", # New Mexico / Sante Fe
+    "Q8) What is the capital of Nevada?\n(a)> Las Vegas \n(b)> Carson City \n(c)> Reno ...", # Nevada /  Carson City
+    "Q9) What is the capital of Oregon?\n(a)> Salem \n(b)> Portland \n(c)> Medford ...", # Oregon / Salem
+    "Q10) What is the capital of Utah?\n(a)> Ogden \n(b)> West Valley City \n(c)> Salt Lake City ...", # Utah / SLC
+    
+		    # quiz on the central states
+    "Q11) What is the capital of Illinois?\n(a)> Chicago \n(b)> Joliet \n(c)> Springfield ...", # Illinois / Springfield
+    "Q12) What is the capital of Indiana?\n(a)> Indianapolis \n(b)> Bloomington \n(c)> Fort Wayne ...", # Indiana / Indianapolis
+    "Q13) What is the capital of Kansas?\n(a)> Wichita \n(b)> Kansas City \n(c)> Topeka ...", # Kansas / Topeka
+    "Q14) What is the capital of Michigan?\n(a)> Detroit \n(b)> Lansing \n(c)> Ann Arbor ...", # Michigan / Lansing
+    "Q15) What is the capital of Minnesota?\n(a)> St. Paul \n(b)> Minneapolis \n(c)> Grand Rapids ...", # Minnesota / St. Paul
+    
+    "Q16) What is the capital of Missouri?\n(a)> Jefferson City \n(b)> Kansas City \n(c)> ...", # Missouri / Jefferson City
+    "Q17) What is the capital of North Dakota?\n(a)> Fargo \n(b)> \n(c)> Bismark ...", # North Dakota / Bismark
+    "Q18) What is the capital of South Dakota?\n(a)> Pierre \n(b)> Sioux Falls \n(c)> Rapid City ...", # South Dakota / 
+    "Q19) What is the capital of Texas?\n(a)> Houston \n(b)> Austin \n(c)> Dallas ...", # Texas / Austin
+    "Q20) What is the capital of Winsconsin?\n(a)> Madison \n(b)> Milwaukee \n(c)> Green Bay ...", # Winsconsin / Madison
+    
+		    # eastern states
+    "Q21) What is the capital of Connecticut?\n(a)> Bridgeport \n(b)> New Haven \n(c)> Hartford ...", # Connecticut / Hartford
+    "Q22) What is the capital of Delaware?\n(a)> Dover \n(b)> Wilmington \n(c)> Harrington ...", # Delaware / Dover
+    "Q23) What is the capital of Florida?\n(a)> Miami \n(b)> Pensacola \n(c)> Tallahassee ...", # Florida / Tallahassee
+    "Q24) What is the capital of Maine?\n(a)> Augusta \n(b)> Bangor \n(c)> Brunswick ...", # Maine / Augusta
+    "Q25) What is the capital of Maryland?\n(a)> Annapolis \n(b)> Baltimore \n(c)> Waldorf ...", # MAryland / Annapolis
+    
+    "Q26) What is the capital of Massachusetts?\n(a)> Lowell \n(b)> Boston \n(c)> Plymouth ...", # Massachusetts
+    "Q27) What is the capital of New Hampshire?\n(a)> Concord \n(b)> Manchester \n(c)> Hanover ...", # New Hampshire / Concord
+    "Q28) What is the capital of New Jersey?\n(a)> Newark \n(b)> Edison \n(c)> Trenton ...", # New Jersey / Trenton
+    "Q29) What is the capital of New York?\n(a)> New York City \n(b)> Albany \n(c)> Tuckahoe ...", # New York / Albany
+    "Q30) What is the capital of North Carolina?\n(a)> Raleigh \n(b)> Charlotte \n(c)> Greensboro ...", # NC / Raleigh
+]
+    
+questions = [
+	# western states 1 - 5
+    Question(question_prompts[0], "b"),
+    Question(question_prompts[1], "a"),
+    Question(question_prompts[2], "a"),
+    Question(question_prompts[3], "c"),
+    Question(question_prompts[4], "c"),
+    
+		    # western states 6 - 10
+    Question(question_prompts[5], "b"),
+	Question(question_prompts[6], "c"),
+	Question(question_prompts[7], "b"),
+    Question(question_prompts[8], "a"),
+	Question(question_prompts[9], "c"),
+    
+		    # central states 1 - 5
+	Question(question_prompts[10], "c"),
+    Question(question_prompts[11], "a"),
+    Question(question_prompts[12], "c"),
+    Question(question_prompts[13], "b"),
+	Question(question_prompts[14], "a"),
+    
+		    # central states 6 - 10
+	Question(question_prompts[15], "a"),
+    Question(question_prompts[16], "c"),
+	Question(question_prompts[17], "a"),
+	Question(question_prompts[18], "b"),
+    Question(question_prompts[19], "a"),
+    
+		    # eastern states 1 - 5
+    Question(question_prompts[20], "c"),
+	Question(question_prompts[21], "a"),
+	Question(question_prompts[22], "c"),
+    Question(question_prompts[23], "a"),
+	Question(question_prompts[24], "a"),
+    
+		    # eastern states 6 - 10
+	Question(question_prompts[25], "b"),
+	Question(question_prompts[26], "a"),
+    Question(question_prompts[27], "c"),
+	Question(question_prompts[28], "b"),
+    Question(question_prompts[29], "a"),
+]    
+            
+def run_quiz(questions):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt)
+        if answer == question.answer:
+            score += 1  
+    print("You scored ", score, " points out of a possible ", len(questions))
+    
+run_quiz(questions)
