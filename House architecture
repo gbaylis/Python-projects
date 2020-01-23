@@ -78,4 +78,4 @@ print("Living room floor.........." + living_floor)
 
 print("Guest bedroom wall color.........." + room1_color)
 print("Guest bedroom.........." + room1_window)
-print("Guest bedroom flooring.........." + room1_floor)
+print("Guest bedroom flooring.........." + room1_floor) . 
