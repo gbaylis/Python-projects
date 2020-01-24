@@ -102,7 +102,7 @@ def run_quiz(questions):
     for question in questions:
         answer = input(question.prompt)
         if answer == question.answer:
-            score += 1  
+            score += 1   
     print("You scored ", score, " points out of a possible ", len(questions))
     
-run_quiz(questions)
+run_quiz(questions)  
