@@ -1,0 +1,69 @@
+# a pong game, by gbaylis
+# created on Jan 26th 2020
+
+import turtle
+# turtle is a Python feature that acts like a drawing board
+# it allows the user to create the graphics, to make the game
+import os
+
+wn = turtle.Screen()
+wn.title("Pong")
+# the background will be green, like a tennis court
+wn.bgcolor("green")
+# the game window will be a 700 pixel square window
+wn.setup(width=700, height=700)
+wn.tracer(0)
+
+#Score, plaer 1 is a, & player 2 is z
+# you could give one of the players some points at the star
+#make it more challenging for the other player
+score_a = 0
+score_z = 0
+
+# Paddle A, the paddle on the left side of the screen
+paddle_a = turtle.Turtle()
+paddle_a.speed(0)
+# the paddles will be long rectangles, on either side of the screen
+paddle_a.shape("square")
+# Player 1 paddle with be white, however, I will make player 2 paddle be black
+paddle_a.color("white")
+# stretch the paddle into the long rectangle shape
+paddle_a.shapsesize(stretch_wid=5, stretch_len=1)
+paddle_a.penup()
+# the -350 puts the paddle, on the left side of the screen
+#-350 is on the x or horizontal axis, or moving the object to the left or right
+paddle_a.goto(-350, 0)
+
+# Paddle Z, player 2's paddle
+# I use letters for the players, so there is no confusion when using ints
+#for other variables
+paddle_z = turtle.Turtle()
+paddle_z.speed(0)
+paddle_z.shape("square")
+#player 1 paddle is white, and player 2 paddle will be black 
+# it would be as if 2 tennis players had racquets of different colors
+paddle_z.color("black")
+# I made player 2 paddle the same size as player 1 paddle
+# you could make one of the paddles larger, to give them an advantage
+paddle_z.shapesize(stretch_wid=5, stretch_len=1)
+paddle_z.penup()
+# the paddle will be on the right side of the screen
+# the 350 refers to being 350 pixels to the right of the center of the screen
+# the 0 refers to the y axis or moving the object up and down the screen
+paddle_z.goto(350,0)
+
+# the ball
+ball = turtle.Turtle()
+ball.speed(0)
+# I want the ball to be circle, will resemble a tennis ball
+ball.shape("circle")
+# white ball will show up well on the green background
+ball.color("white")
+ball.penup()
+# 0,0 would be the center of the screen
+# I will position the ball closer to player 2
+# to resemble a tennis player serving the ball
+ball.goto(200,0)
+# an integer, to determine how fast the ball moves to the left or right
+ball.dx = 2
+ball.dy = 2
