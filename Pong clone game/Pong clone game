@@ -1,1 +1,152 @@
-# put code here
+# original code is from a pong clone from free code camp
+# edited and changes from Gbaylis on 2-29-2020
+
+import turtle
+import os
+
+wn = turtle.Screen()
+# the puck moves in 2d space, which resembles air hocket
+wn.title("Air Hockey")
+wn.bgcolor("black")
+wn.setup(width=800, height=600)
+wn.tracer(0)
+
+
+# Score , both players start with 0 points
+score_a = 0
+score_b = 0
+
+# Paddle A , the paddle on the left side of the screen
+paddle_a = turtle.Turtle()
+paddle_a.speed(0)
+paddle_a.shape("square")
+paddle_a.color("white")
+# the paddle is stretched by 5, and a width of 1, making it resemble a long rectangle
+paddle_a.shapesize(stretch_wid=5,stretch_len=1)
+paddle_a.penup()
+# the -350, = 350 units to the left of the center of the screen
+paddle_a.goto(-350, 0)
+
+# Paddle B
+paddle_b = turtle.Turtle()
+paddle_b.speed(0)
+paddle_b.shape("square")
+paddle_b.color("white")
+paddle_b.shapesize(stretch_wid=5,stretch_len=1)
+paddle_b.penup()
+# move this paddle, 350 units to the right of the center of the screen
+paddle_b.goto(350, 0)
+
+# puck
+puck = turtle.Turtle()
+puck.speed(0)
+# the puck will be a white circle
+puck.shape("circle")
+puck.color("white")
+puck.penup()
+puck.goto(0, 0)
+# dx = the speed the puck moves left to right, for the x axis
+puck.dx = 2
+# dy = the speed the puck moves up and down, on the y axis
+puck.dy = 2
+
+# Pen
+pen = turtle.Turtle()
+pen.speed(0)
+pen.shape("square")
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+# player on the left is the Home and the player on the right is the Visitor
+pen.write("Home: 0  Visitor: 0", align="center", font=("Baskerville", 20, "normal"))
+
+# Functions
+# paddle a , the function that controls the paddle o nthe left side, moving up and down the screen
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
+
+
+# paddle b , the function that controls the paddle on the right side of the screen moving, moving up and down the screen
+def paddle_b_up():
+    y = paddle_b.ycor()
+    y += 20
+    paddle_b.sety(y)
+
+def paddle_b_down():
+    y = paddle_b.ycor()
+    y -= 20
+    paddle_b.sety(y)
+
+# Keyboard bindings , mapping buttons on the keyboard so that they move the paddles
+wn.listen()
+# w key moves the paddle on the left side of the screen, up the screen
+wn.onkeypress(paddle_a_up, "w")
+# s key moves paddle on the left side of the screen, down the screen
+wn.onkeypress(paddle_a_down, "s")
+# the up arrow key moves the paddle on the right side of the screen, up the screen
+wn.onkeypress(paddle_b_up, "Up")
+# the down arrow key moves the paddle on the right, down the screen
+wn.onkeypress(paddle_b_down, "Down")
+
+# Main game loop
+# when the puck has left the game screen, the puck will reappear in the center of the screen
+while True:
+    wn.update()
+    
+    # Move the puck , along the x and y coordinates
+    puck.setx(puck.xcor() + puck.dx)
+    puck.sety(puck.ycor() + puck.dy)
+
+    # Border checking
+
+    # Top and bottom
+    # ycor for y coordinate
+    if puck.ycor() > 290:
+        puck.sety(290)
+        puck.dy *= -1
+     #  os.system("afplay bounce.wav&")
+    
+    # ycor for y coordinate
+    elif puck.ycor() < -290:
+        puck.sety(-290)
+        puck.dy *= -1
+      #  os.system("afplay bounce.wav&")
+
+    # Left and right..... xcor for x coordinate
+    # if the puck is located in a spot, more then 350 units to the right, award the player on the left a point
+    if puck.xcor() > 350:    # right
+        score_a += 1
+        # clear the score each time a player score a new point, otherwise you will have numbers overlapping
+        pen.clear()
+        pen.write("Home: {}  Visitor: {}".format(score_a, score_b), align="center", font=("Baskerville", 20, "normal"))
+        puck.goto(0, 0)
+        puck.dx *= -1
+
+ # left, and xcor for xcoordinate
+    elif puck.xcor() < -350:    # left
+        # if the puck is located in a spot, more then 350 units to the left, award the player on the right a point
+        score_b += 1
+        pen.clear()
+        pen.write("Home: {}  Visitor: {}".format(score_a, score_b), align="center", font=("Baskerville", 20, "normal"))
+        puck.goto(0, 0)
+        puck.dx *= -1
+
+    # Paddle and puck collisions
+    if puck.xcor() < -340 and puck.ycor() < paddle_a.ycor() + 50 and puck.ycor() > paddle_a.ycor() - 50:
+        puck.dx *= -1 
+       # I did not include the original sound files, but if wanted to use them, they are commented below
+       # os.system("afplay bounce.wav&")
+    
+    elif puck.xcor() > 340 and puck.ycor() < paddle_b.ycor() + 50 and puck.ycor() > paddle_b.ycor() - 50:
+        puck.dx *= -1
+       # I did not include the original sound files, but if wanted to use them, they are commented below
+       # os.system("afplay bounce.wav&")
+    
