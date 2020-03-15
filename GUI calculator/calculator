@@ -29,8 +29,6 @@ text_Input = StringVar()
 txtDisplay = Entry(cal,font=('Baskerville', 40,'bold'), textvariable=text_Input, bd=30, insertwidth=4,
                    bg="yellow", justify='right').grid(columnspan=4)
 
-
-
 ####################### buttons, 1, 2, 3, + , row 1
 # button 1, row 1, col 0
 btn1=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
@@ -97,8 +95,6 @@ Clear=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('Baskerville',30,'bol
 ####### multiplication
 Multiply=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="*", command=lambda:btnClick("*"),  bg="yellow").grid(row=4,column=3)
-
-
 
 cal.mainloop()
 
