@@ -1,88 +1,104 @@
 # created by gbaylis on March 14, 2020
 from tkinter import*
 
+# the function, so that when the user clicks on the number
+# on the GUI calculator, that number appears in the display box
 def btnClick(numbers):
     global operator
     operator= operator + str(numbers)
     text_Input.set(operator)
+
+# create the function, that when you click on Cl on the calculator
+# all the numbers are cleared off of the calculator    
+def btnClearDisplay():
+    global operator 
+    operator=""  
+    text_Input.set("")
+    
+def btnEqualsInput():  
+    global operator 
+    sumTotal=str(eval(operator))  
+    text_Input.set(sumTotal) 
+    operator="" 
 
 cal = Tk()
 cal.title("Calculator")
 operator=""
 text_Input = StringVar()
 
-txtDisplay = Entry(cal,font=('arial', 40,'bold'), textvariable=text_Input, bd=30, insertwidth=4,
+txtDisplay = Entry(cal,font=('Baskerville', 40,'bold'), textvariable=text_Input, bd=30, insertwidth=4,
                    bg="yellow", justify='right').grid(columnspan=4)
 
 
 
 ####################### buttons, 1, 2, 3, + , row 1
 # button 1, row 1, col 0
-btn1=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn1=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="1",command=lambda:btnClick(1), bg="yellow").grid(row=1,column=0)
 
 # button 2, row 1, col 1
-btn2=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn2=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="2",command=lambda:btnClick(2), bg="yellow").grid(row=1,column=1)
 
 # button 3, row 1 , col 2
-btn3=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn3=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="3",command=lambda:btnClick(3), bg="yellow").grid(row=1,column=2)
 
 # button "+", addition sign, row 1, col 3
-Addition=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+Addition=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="+",command=lambda:btnClick("+"),  bg="yellow").grid(row=1,column=3)
 
 ############################### buttons, 4 , 5 , 6, - , row 2
 # button 4, row 2, col 0
-btn4=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn4=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="4",command=lambda:btnClick(4), bg="yellow").grid(row=2,column=0)
 
 # button 5, row 2, col 1
-btn5=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn5=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="5",command=lambda:btnClick(5), bg="yellow").grid(row=2,column=1)
 
 # button 6, row 2 , col 2
-btn6=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn6=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="6",command=lambda:btnClick(6), bg="yellow").grid(row=2,column=2)
 
 # button "-", subtraction sign, row 2, col 3
-Subtraction=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+Subtraction=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="-", command=lambda:btnClick("-"), bg="yellow").grid(row=2,column=3)
 
 ########################### buttons, 7, 8, 9 and * , row 3
 # button 7, row 3, col 0
-btn7=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn7=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="7", command=lambda:btnClick(7),  bg="yellow").grid(row=3,column=0)
 
 # button 8, row 3, col 1
-btn8=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn8=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="8",command=lambda:btnClick(8),  bg="yellow").grid(row=3,column=1)
 
 # button 9, row 3 , col 2
-btn9=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn9=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="9",command=lambda:btnClick(9),  bg="yellow").grid(row=3,column=2)
 # button "/" division sign, row 3, col 3
-Division=Button(cal, padx=16, bd=8, fg="black", font=('arial',30,'bold'),
+Division=Button(cal, padx=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="/",command=lambda:btnClick("/"),  bg="yellow").grid(row=3,column=3)
 
 ########################## buttons: =, 0, Clear, *, row 4
 # "=" , equals sign, row 4, col 0
-Equals=Button(cal, padx=16, pady=16, bd=8, fg="black", font=('arial',30,'bold'),
-            text="=",command=lambda:btnClick("="),  bg="yellow").grid(row=4,column=0)
+Equals=Button(cal, padx=16, pady=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
+            text="=",command=btnEqualsInput,  bg="yellow").grid(row=4,column=0)
 
 # button 0 , row 4, col 1
-btn0=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('arial',30,'bold'),
+btn0=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="0",command=lambda:btnClick(0),  bg="yellow").grid(row=4,column=1)
 
 ######## Clear the screen
-Clear=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('arial',30,'bold'),
-            text="Cl",  bg="yellow").grid(row=4,column=2)
+Clear=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
+            text="Cl",command = btnClearDisplay, bg="yellow").grid(row=4,column=2)
 
 ####### multiplication
-Multiply=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('arial',30,'bold'),
+Multiply=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
             text="*", command=lambda:btnClick("*"),  bg="yellow").grid(row=4,column=3)
 
 
 
 cal.mainloop()
+
