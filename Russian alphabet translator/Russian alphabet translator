@@ -1,0 +1,116 @@
+from tkinter import*
+
+# the function, so that when the user clicks on the number
+# on the GUI calculator, that number appears in the display box
+def btnClick(numbers):
+    global operator
+    operator= operator + str(numbers)
+    text_Input.set(operator)
+
+# create the function, that when you click on Cl on the calculator
+# all the numbers are cleared off of the calculator    
+def btnClearDisplay():
+    global operator 
+    operator=""  
+    text_Input.set("")
+    
+    '''
+def btnEqualsInput():  
+    global operator 
+    sumTotal=str(eval(operator))  
+    text_Input.set(sumTotal) 
+    operator="" 
+    '''
+
+cal = Tk()
+cal.title("Russian translator")
+operator=""
+text_Input = StringVar()
+
+txtDisplay = Entry(cal,font=('Times New Roman', 30), textvariable=text_Input, bd=30, insertwidth=5,
+                   bg="yellow", justify='center').grid(columnspan=5)
+
+
+
+####################### letters A, B, V, G, roq 1
+# letter a
+btnA=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="A a",command=lambda:btnClick("a"), bg="yellow").grid(row=1,column=0)
+
+# letter b
+btnB=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="Б б",command=lambda:btnClick("b"), bg="yellow").grid(row=1,column=1)
+
+# letter v
+btnV=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="В в",command=lambda:btnClick("v"), bg="yellow").grid(row=1,column=2)
+
+# letter g
+btnG=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="Г г",command=lambda:btnClick("g"),  bg="yellow").grid(row=1,column=3)
+
+# letter d
+btnD=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="Д д",command=lambda:btnClick("d"),  bg="yellow").grid(row=1,column=4)
+
+############################### row 2
+# ye sound
+btnye=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="Е е",command=lambda:btnClick("ye"), bg="yellow").grid(row=2,column=0)
+
+# yo sound
+btnyo=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="Ё ё",command=lambda:btnClick("yo"), bg="yellow").grid(row=2,column=1)
+
+# zh sound as in s as in measure or pleasure
+btnzh=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="Ж ж",command=lambda:btnClick("zh"), bg="yellow").grid(row=2,column=2)
+
+# letter z , z in zoo
+btnz=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="З з", command=lambda:btnClick("z"), bg="yellow").grid(row=2,column=3)
+
+# ee sound, "ee" in see
+btnee=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="И и", command=lambda:btnClick("ee"), bg="yellow").grid(row=2,column=4)
+
+###########################  row 3
+# y in boy or toy
+btny=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="Й й", command=lambda:btnClick("y"),  bg="yellow").grid(row=3,column=0)
+
+# k in king
+btnk=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="K k",command=lambda:btnClick("k"),  bg="yellow").grid(row=3,column=1)
+
+# L in light
+btnL=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="Л л",command=lambda:btnClick("L"),  bg="yellow").grid(row=3,column=2)
+
+# m in mat
+btnm=Button(cal, padx=16, bd=8, fg="black", font=('Times New Roman',30),
+            text="M m",command=lambda:btnClick("m"),  bg="yellow").grid(row=3,column=3)
+
+########################## buttons: =, 0, Clear, *, row 4
+# "=" , equals sign, row 4, col 0 '''
+'''
+will not need a equals for letters
+Equals=Button(cal, padx=16, pady=16, bd=8, fg="black", font=('Baskerville',30,'bold'),
+            text="=",command=btnEqualsInput,  bg="yellow").grid(row=4,column=0)
+'''
+
+# button 0 , row 4, col 1
+btn0=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('Times New Roman',30,'bold'),
+            text="0",command=lambda:btnClick(0),  bg="yellow").grid(row=4,column=1)
+
+######## Clear the screen
+Clear=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('Times New Roman',30,'bold'),
+            text="Cl",command = btnClearDisplay, bg="yellow").grid(row=4,column=2)
+
+####### multiplication
+Multiply=Button(cal, padx=16,pady=16, bd=8, fg="black", font=('Times New Roman',30,'bold'),
+            text="*", command=lambda:btnClick("*"),  bg="yellow").grid(row=4,column=3)
+
+
+
+cal.mainloop()
