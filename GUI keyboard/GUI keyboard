@@ -16,22 +16,28 @@ Keyboard_App ['bg']='light grey'
 Keyboard_App.resizable(0,0)
 
 def select(value):
-    if value == "Space":
-        entry
+    if value == " Space ":
+        entry.insert(tkinter.END, ' ') # 1 space for the space bar
+        
+    elif value == " Tab ":
+        entry.insert(tkinter.END, '    ') # 4 spaces for the tab
+    else:
+            entry.insert(tkinter.END,value)
 
 # settings such as font, font size, color, etc
 label1 = Label(Keyboard_App, text="GUI KeyBoard", font=('Times New Roman', 30, 'bold'),
-                bg='light grey', fg="black").grid(row = 0, columnspan = 40)
-entry = Text(Keyboard_App, width=138, font=('Times New Roman', 10, 'bold')).grid(row = 1, columnspan = 40)
+                bg='light grey', fg="black").grid(row = 0, columnspan = 16)
+entry = Text(Keyboard_App, width=118, font=('Times New Roman', 18, 'bold'))
+entry.grid(row = 1, columnspan = 40)
 
 # arrange the letters that will appear, on the keyboard
 buttons = [
-'!', 'q','w','e','r','t','y','u','i','o','p','<-','7','8','9','-', 
+'!', 'q','w','e','r','t','y','u','i','o','p','"','7','8','9','-', 
 'Tab','a','s','d','f','g','h','j','k','l',';','[', '4','5','6','+',
-'Shift','z','x','c','v','b','n','m',',','?','1','2','3','0','/','*',
+'<>','z','x','c','v','b','n','m',',','?','1','2','3','0','/','*',
 ' Space '        
 ]
-varRow = 2
+varRow = 3
 varColumn = 0
 
 # for all the keys, that are not the space button, I adjusted the height and width of the buttons, to make them larger
@@ -39,7 +45,7 @@ for button in buttons:
     command = lambda x = button: select(x)
     if button != " Space ":
         tkinter.Button(Keyboard_App, text = button, width = 9, height=4,bg='light grey',fg="black",
-                       activebackground="black", activeforeground="white", relief = 'raised',
+                       activebackground="black", activeforeground="blue", relief = 'raised',
                        padx = 3, pady = 3, bd=12,font=('Times New Roman', 16, 'bold'),
                        command = command).grid(row=varRow, column = varColumn)
         
@@ -47,15 +53,17 @@ for button in buttons:
       
     if button == " Space ":
         tkinter.Button(Keyboard_App, text = button, width = 118,height=4, bg='light grey',fg="black",
-                       activebackground="black", activeforeground="white", relief = 'raised',
+                       activebackground="black", activeforeground="blue", relief = 'raised',
                        padx = 3, pady = 3, bd=12,font=('Times New Roman', 16, 'bold'),
-                       command = command).grid(row=6, column = 16)   
+                       command = command).grid(row=6, columnspan = 16)   
     varColumn += 1
-    if varColumn > 15 and varRow == 2:
+    if varColumn > 15 and varRow == 3:
         varColumn = 0
         varRow += 1
-    if varColumn > 15 and varRow == 3:
+    if varColumn > 15 and varRow == 4:
         varColumn = 0
         varRow += 1    
         
 Keyboard_App.mainloop()
+
+        
