@@ -2,6 +2,9 @@
 Created by gbaylis
 March 22, 2020
 GUI or on screen keyboard
+
+this program is missing a delete key or a way to switch between upper and lower case
+
 '''
 
 from functools import partial
