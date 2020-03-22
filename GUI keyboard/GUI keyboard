@@ -1,3 +1,9 @@
+'''
+Created by gbaylis
+March 22, 2020
+GUI or on screen keyboard
+'''
+
 from functools import partial
 
 from tkinter import*
