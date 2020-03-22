@@ -1,0 +1,30 @@
+from functools import partial
+
+# created by gbaylis on March 21 2020
+from tkinter import*
+import tkinter
+
+Keyboard_App = tkinter.Tk()
+Keyboard_App.title("Onscreen Keyboard")
+Keyboard_App ['bg']='light grey'
+Keyboard_App.resizable(0,0)
+
+
+label1 = Label(Keyboard_App, text="OnScreen KeyBoard", font=('Times New Roman', 30, 'bold'),
+                bg='light grey', fg="black").grid(row = 0, columnspan = 40)
+entry = Text(Keyboard_App, width=138, font=('Times New Roman', 15, 'bold')).grid(row = 1, columnspan = 40)
+
+buttons = [
+'!', 'q','w','e','r','t','y','u','i','o','p','<-','7','8','9','-',  
+'Tab','a','s','d','f','g','h','j','k','l',';','[', '4','5','6','+',  
+'SHIFT','z','x','c','v','b','n','m',',','?','SHIFT','1','2','3','/',
+' Space '        
+]
+varRow = 2
+varColumn = 0
+
+Keyboard_App.mainloop()
+
+for button in buttons:
+    command = lambda x = button: select(x)
+    if button != " Space ":
