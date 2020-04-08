@@ -319,12 +319,11 @@ elif rolls == 13:
         print(" You choose neither hearts nor number cards")  
         print(" Please play again")  
     
-    
-# the diamonds, 2nd suit
+    # the diamonds, 2nd suit
 
 elif rolls == 14:
 # Playing cards, ace of diamonds   
-    class ace_diamonds:
+    class ace_diamond:
         def dcard14(card): 
             print(" This is the ace of diamonds \n")
 # d for diamonds
@@ -751,7 +750,7 @@ elif rolls == 33:
 elif rolls == 34:        
 # 7 of clubs
     class seven_club:
-        def bcard7(card):
+        def ccard7(card):
             print(" This is the seven of clubs \n") 
     c7 = seven_club()
     c7.ccard7()   
