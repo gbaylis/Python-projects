@@ -14,7 +14,7 @@ of functions.
 from random import randint
 
 # tell the player the suits available
-print(" Welcome the card drawn game, you win points be choosing a correct suit and number or face card")
+print(" Welcome to my card game, you win points be choosing a correct suit and number or face card")
 print(" Choose a suit (spades, clubs, hearts, diamonds)")
 print(" You have a 1/4 chance at winning 5 points, if you pick the correct suit")
 print(" 1) Type 1 for spades")
