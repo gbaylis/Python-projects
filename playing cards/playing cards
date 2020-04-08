@@ -342,7 +342,7 @@ elif rolls == 39:
 # 2 of clubs
     class two_club:
         def ccard2(card):
-            print(" This is the two of hearts \n")
+            print(" This is the two of clubs \n")
     c2 = two_club()
     c2.ccard2()  
     
