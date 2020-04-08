@@ -395,7 +395,7 @@ elif rolls == 45:
     class nine_spade:
         def scard9(card):
             print(" This is the 9 of spades \n")
-    s9 = nine_heart()
+    s9 = nine_spade()
     s9.scard9()
 
 
@@ -420,7 +420,7 @@ elif rolls == 48:
     class six_spade:
         def scard6(card):
             print(" This is the six of spades \n") 
-    s6 = six_heart()
+    s6 = six_spade()
     s6.scard6()          
         
 elif rolls == 49:         
