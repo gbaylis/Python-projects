@@ -1,7 +1,7 @@
 '''
 gbaylis
 April 8th 2020
-A 2 player version of the card game
+A 2 player version of the card game 
 '''
 from random import randint
 
