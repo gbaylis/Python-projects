@@ -593,7 +593,7 @@ elif rolls == 26:
         print(" Please play again")
     
     
-# Clubs , 3rd suit
+# Clubs ,3rd suit
 
 elif rolls == 27:   
     class ace_club:
