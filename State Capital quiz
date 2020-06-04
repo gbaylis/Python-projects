@@ -1,4 +1,4 @@
-# State Capital Quiz, created on Oct. 9th, 2019, Python
+# State Capital Quiz, Python
 class Question:
     def __init__(self, prompt, answer):
         self.prompt = prompt
