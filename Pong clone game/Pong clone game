@@ -1,5 +1,5 @@
 # original code is from a pong clone from free code camp
-# edited and changes from Gbaylis on 2-29-2020
+# gbaylis
 
 import turtle
 import os
