@@ -1,6 +1,6 @@
 '''
 gbaylis | Python
-a number guessing game that combines the while loop and rand int
+a number guessing game that combines the while loop and rand int 
 '''
 import random
 
