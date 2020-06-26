@@ -1,4 +1,4 @@
-# created by gbaylis on March 14, 2020
+# created by gbaylis | Python
 from tkinter import*
 
 # the function, so that when the user clicks on the number
