@@ -26,9 +26,13 @@ total_1 = pay_pal / deposit_2
 # online wallet to pay pal
 total = total_1 * deposit_1
 
+#convert the float to a string
+total_value = str(total)
+
 # print what the user earned this year from their online job
 print("*" * 25)
 print(" This year, you earned")
-print(total,2)
+# because the float was converted to a string, it can be printed with the $
+print (" $"+total_value)
 print(" from your online job")
 print("*" * 25)
