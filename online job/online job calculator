@@ -22,8 +22,6 @@ pay_pal = float(input(" How much is in the pay pal at the end of the year...  ")
 # pay pal total EOY divided by what you always leave in the pay pal
 total_1 = pay_pal / deposit_2
 
-total_1 + 
-
 # pay pal EOY / pay pal deposit * how much you move from your
 # online wallet to pay pal
 total = total_1 * deposit_1
@@ -31,6 +29,6 @@ total = total_1 * deposit_1
 # print what the user earned this year from their online job
 print("*" * 25)
 print(" This year, you earned")
-print(round(total,2))
+print(total,2)
 print(" from your online job")
 print("*" * 25)
