@@ -1,0 +1,36 @@
+'''
+gbaylis | Python
+online income
+
+If a person has an online job that does not provide a pay stub
+but wants to keep track of how much money they earned in a year.
+The user can move the same amount of money from the online wallet their paypal account to pay their bills.
+Then leave behing a small ammount of money, perhaps $10 and move the rest of the money to their bank account. 
+'''
+
+deposit_1 = float(input(" What dollar amount do you transfer from your online wallet to your pay pal account, the amount should be consistent?... "))
+
+# pay pal deposit
+deposit_2 = float(input(" How much do you leave behind in your pay pal account?...   "))
+
+# find out how much goes to bank each transaction after 
+# a small amount is left in the pay pal
+deposit_3 = deposit_1 - deposit_2
+
+pay_pal = float(input(" How much is in the pay pal at the end of the year...  "))
+
+# pay pal total EOY divided by what you always leave in the pay pal
+total_1 = pay_pal / deposit_2
+
+total_1 + 
+
+# pay pal EOY / pay pal deposit * how much you move from your
+# online wallet to pay pal
+total = total_1 * deposit_1
+
+# print what the user earned this year from their online job
+print("*" * 25)
+print(" This year, you earned")
+print(round(total,2))
+print(" from your online job")
+print("*" * 25)
